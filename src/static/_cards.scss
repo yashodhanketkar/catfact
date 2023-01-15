@@ -1,0 +1,77 @@
+.card {
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 1.5rem;
+  height: auto;
+  width: 90vw;
+  padding: 1rem;
+  margin: 1rem 1rem 1rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 .2rem 0 black;
+
+  &.small {
+    width: 25rem;
+  }
+
+  .card-button-wrapper {
+    display: flex;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    column-gap: .5rem;
+
+    &>* {
+      background-color: $primary-background-color;
+      border: 0;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 .1rem 0 black;
+
+      &:hover {
+        box-shadow: 0 0 .2rem 0 black;
+      }
+    }
+  }
+
+  .card-data {
+    text-align: center;
+
+    &.collapsed {
+      display: none;
+      height: auto;
+    }
+  }
+
+}
+
+.data-fact {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+}
+
+.data-length {
+  font-size: 1.2rem;
+  margin-bottom: .6rem;
+}
+
+.fact-button {
+  font-size: 1.2rem;
+  background-color: lighten($primary-background-color, 25%);
+  border-radius: 2rem;
+  border: .1rem;
+  width: 10rem;
+  height: 2rem;
+  box-shadow: 0 0 .1rem 0 black;
+  color: $primary-text-color;
+
+  &:hover {
+    background-color: lighten($primary-background-color, 15%);
+    box-shadow: 0 0 .2rem 0 black;
+  }
+}

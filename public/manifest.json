@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Cat fact",
+  "name": "Cat fact ninja display",
   "icons": [
     {
       "src": "favicon.ico",

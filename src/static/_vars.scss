@@ -1,2 +1,17 @@
-$primary-background-color: #aaa;
+$primary-background-color: gainsboro;
 $primary-text-color: #373d3f;
+
+@mixin buttonStyle($color: $primary-background-color, $width: 2em, $height: 2em) {
+  background-color: lighten($color, 10%);
+  border-radius: 2rem;
+  border: .1rem;
+  box-shadow: 0 0 .1rem 0 black;
+  color: $primary-text-color;
+  width: $width;
+  height: $height;
+
+  &:hover {
+    background-color: lighten($color, 15%);
+    box-shadow: 0 0 .2rem 0 black;
+  }
+}

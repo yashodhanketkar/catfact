@@ -1,5 +1,5 @@
 .card {
-  background-color: $primary-background-color;
+  background-color: white;
   color: $primary-text-color;
   display: flex;
   flex-direction: column;
@@ -7,15 +7,20 @@
   justify-content: center;
   position: relative;
   min-height: 1.5rem;
-  height: auto;
-  width: 90vw;
+  height: fit-content;
   padding: 1rem;
   margin: 1rem 1rem 1rem 1rem;
   border-radius: 1rem;
-  box-shadow: 0 0 .2rem 0 black;
+  box-shadow: 0 0 .25em 0 black;
+
+  animation-name: expandCard;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
 
   &.small {
-    width: 25rem;
+    animation-name: shrinkCard;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
   }
 
   .card-button-wrapper {
@@ -26,16 +31,7 @@
     column-gap: .5rem;
 
     &>* {
-      background-color: $primary-background-color;
-      border: 0;
-      height: 2rem;
-      width: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 .1rem 0 black;
-
-      &:hover {
-        box-shadow: 0 0 .2rem 0 black;
-      }
+      @include buttonStyle($height: 3em, $width: 3em);
     }
   }
 
@@ -62,16 +58,25 @@
 
 .fact-button {
   font-size: 1.2rem;
-  background-color: lighten($primary-background-color, 25%);
-  border-radius: 2rem;
-  border: .1rem;
-  width: 10rem;
-  height: 2rem;
-  box-shadow: 0 0 .1rem 0 black;
-  color: $primary-text-color;
+  @include buttonStyle($width: 10em, $height: 2em);
+}
 
-  &:hover {
-    background-color: lighten($primary-background-color, 15%);
-    box-shadow: 0 0 .2rem 0 black;
+@keyframes shrinkCard {
+  0% {
+    width: 80%;
+  }
+
+  100% {
+    width: min(40em, 50%);
+  }
+}
+
+@keyframes expandCard {
+  0% {
+    width: min(40em, 50%);
+  }
+
+  100% {
+    width: 80%;
   }
 }

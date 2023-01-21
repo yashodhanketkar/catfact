@@ -1,4 +1,25 @@
+header {
+  height: max(3rem, 1.5em);
+  font-size: 2rem;
+  background-color: black;
+  color: darken(white, 20%);
+  display: flex;
+  justify-content: center;
+
+  .site-name {
+    font-size: inherit;
+    width: fit-content;
+    font-weight: 600;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
 .content {
   display: flex;
   justify-content: center;
+  background-color: $primary-background-color;
+  height: calc(100vh - max(3rem, 3em));
 }

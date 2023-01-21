@@ -1,0 +1,1 @@
+type catfact = { fact: string; length: number };

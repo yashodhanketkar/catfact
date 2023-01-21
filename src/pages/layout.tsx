@@ -1,11 +1,15 @@
-import React from "react";
-import Facts from "./facts";
+import { FC } from "react";
+import { DisplayCatFact } from "./facts";
+import { Header } from "../components/header";
 
-const Layout = () => {
+const Layout: FC = (): JSX.Element => {
   return (
-    <div className="content">
-      <Facts />
-    </div>
+    <>
+      <Header />
+      <div className="content">
+        <DisplayCatFact />
+      </div>
+    </>
   );
 };
 

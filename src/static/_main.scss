@@ -22,4 +22,35 @@ header {
   justify-content: center;
   background-color: $primary-background-color;
   height: calc(100vh - max(3rem, 3em));
+
+  &.dark {
+    background-color: darken($dark-background-color, 15%);
+  }
+}
+
+.dark-mode-button {
+  position: fixed;
+  top: .5rem;
+  right: .5rem;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+
+  svg {
+    margin: 0;
+    padding: 0;
+    border-radius: 1em;
+    background-color: white;
+    color: black;
+  }
+
+  &.dark {
+    svg {
+      margin: 0;
+      padding: 0;
+      border-radius: 1em;
+      background-color: black;
+      color: white;
+    }
+  }
 }

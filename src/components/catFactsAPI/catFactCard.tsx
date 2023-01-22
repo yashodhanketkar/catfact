@@ -1,13 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { GrClose, GrContract } from "react-icons/gr";
+import { ThemeContext } from "../../pages/layout";
 
-interface props {
-  data: catfact;
-  refetch: any;
-}
-
-export const CatCardWrapper = (props: props) => {
+export const CatCardWrapper = (props: catFactProps) => {
   const { data, refetch } = props;
+  const theme = useContext(ThemeContext);
 
   const [cardSizeAddition, setCardSizeAddition] = useState("");
   const [cardVisibility, setCardVisibility] = useState("");
@@ -25,12 +22,12 @@ export const CatCardWrapper = (props: props) => {
   };
 
   return (
-    <div className={`card${cardSizeAddition}`}>
+    <div className={`card${cardSizeAddition}${theme}`}>
       <div className="card-button-wrapper">
-        <button className="size-button" onClick={handleSize}>
+        <button className={`size-button${theme}`} onClick={handleSize}>
           <GrContract />
         </button>
-        <button className="close-button" onClick={handleVisibility}>
+        <button className={`close-button${theme}`} onClick={handleVisibility}>
           <GrClose />
         </button>
       </div>
@@ -44,7 +41,7 @@ export const CatCardWrapper = (props: props) => {
           <div className="data-fact">Loading</div>
         )}
         <input
-          className="fact-button"
+          className={`fact-button${theme}`}
           type={"button"}
           value={"Next Fact"}
           onClick={handleClick}

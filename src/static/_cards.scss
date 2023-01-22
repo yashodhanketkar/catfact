@@ -9,7 +9,7 @@
   min-height: 1.5rem;
   height: fit-content;
   padding: 1rem;
-  margin: 1rem 1rem 1rem 1rem;
+  margin: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 .25em 0 black;
 
@@ -23,16 +23,23 @@
     animation-fill-mode: forwards;
   }
 
+  &.dark {
+    @include darken;
+  }
+
+  input[type=button],
+  .card-button-wrapper {
+    &.dark {
+      @include darken($hover: 0.5);
+    }
+  }
+
   .card-button-wrapper {
     display: flex;
     position: absolute;
     top: .5rem;
     right: .5rem;
     column-gap: .5rem;
-
-    &>* {
-      @include buttonStyle($height: 3em, $width: 3em);
-    }
   }
 
   .card-data {
@@ -43,7 +50,20 @@
       height: auto;
     }
   }
+}
 
+.card-button-wrapper button {
+  &.light {
+    @include buttonStyle($height: 3em, $width: 3em);
+  }
+
+  &.dark {
+    @include buttonStyle($color: $dark-background-color, $height: 3em, $width: 3em);
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .data-fact {

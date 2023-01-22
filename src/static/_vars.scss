@@ -1,8 +1,14 @@
 $primary-background-color: gainsboro;
 $primary-text-color: #373d3f;
 
+$dark-background-color: #4e4e4e;
+$dark-text-color: gainsboro;
+
 @mixin buttonStyle($color: $primary-background-color, $width: 2em, $height: 2em) {
-  background-color: lighten($color, 10%);
+  @if $color {
+    background-color: lighten($color, 10%);
+  }
+
   border-radius: 2rem;
   border: .1rem;
   box-shadow: 0 0 .1rem 0 black;
@@ -11,7 +17,23 @@ $primary-text-color: #373d3f;
   height: $height;
 
   &:hover {
-    background-color: lighten($color, 15%);
+    @if $color {
+      background-color: lighten($color, 15%);
+    }
+
     box-shadow: 0 0 .2rem 0 black;
+  }
+}
+
+@mixin darken($color: $dark-background-color, $hover: 0) {
+  background-color: $dark-background-color;
+  color: $dark-text-color;
+
+  @if $hover>0 {
+    &:hover {
+      background-color: lighten($color, calc(10% * $hover));
+      color: lighten($dark-text-color, calc(10% * $hover));
+      box-shadow: 0 0 .25em 0 lighten($dark-text-color, calc(10% * $hover));
+    }
   }
 }

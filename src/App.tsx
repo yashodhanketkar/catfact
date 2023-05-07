@@ -1,7 +1,6 @@
 import Layout from "./pages/layout";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { CookiesProvider } from "react-cookie";
-import "./static/base.scss";
 
 function App() {
   const client = new QueryClient({});

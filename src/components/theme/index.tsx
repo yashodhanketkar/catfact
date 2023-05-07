@@ -23,10 +23,14 @@ export default function ThemeSetter(props: themeProps) {
   return (
     <>
       <button
-        className={`dark-mode-button${theme}`}
+        className="absolute top-1 right-1 text-white p-1"
         onClick={handleThemeChange}
       >
-        {theme === " dark" ? <MdDarkMode /> : <MdOutlineDarkMode />}
+        {theme === " dark" ? (
+          <MdDarkMode size={28} />
+        ) : (
+          <MdOutlineDarkMode size={28} />
+        )}
       </button>
     </>
   );

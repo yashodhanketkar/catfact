@@ -4,48 +4,57 @@ import { ThemeContext } from "../../pages/layout";
 
 export const CatCardWrapper = (props: catFactProps) => {
   const { data, refetch } = props;
-  const theme = useContext(ThemeContext);
 
-  const [cardSizeAddition, setCardSizeAddition] = useState("");
-  const [cardVisibility, setCardVisibility] = useState("");
+  const [smallCard, setSmallCard] = useState(false);
+  const [cardVisibility, setCardVisibility] = useState(true);
 
   let handleClick = () => {
     refetch();
   };
 
-  let handleSize = () => {
-    cardSizeAddition ? setCardSizeAddition("") : setCardSizeAddition(" small");
-  };
-
-  let handleVisibility = () => {
-    cardVisibility ? setCardVisibility("") : setCardVisibility(" collapsed");
-  };
-
   return (
-    <div className={`card${cardSizeAddition}${theme}`}>
-      <div className="card-button-wrapper">
-        <button className={`size-button${theme}`} onClick={handleSize}>
+    <div
+      className={`${smallCard ? "max-w-prose" : "max-w-[80%]"} ${
+        cardVisibility ? "bg-white p-2 hover:shadow-xl shadow-stone-950" : ""
+      } w-fit rounded-xl m-4`}
+    >
+      <div
+        className={`w-full flex gap-2 justify-end ${
+          cardVisibility ? "" : "ring-1 ring-stone-500 p-2 rounded-xl"
+        }`}
+      >
+        <button
+          className="p-2 rounded-full hover:shadow shadow-stone-500 bg-neutral-200 hover:bg-neutral-100"
+          onClick={() => setSmallCard(!smallCard)}
+        >
           <GrContract />
         </button>
-        <button className={`close-button${theme}`} onClick={handleVisibility}>
+        <button
+          className="p-2 rounded-full hover:shadow shadow-stone-500 bg-neutral-200 hover:bg-neutral-100"
+          onClick={() => setCardVisibility(!cardVisibility)}
+        >
           <GrClose />
         </button>
       </div>
-      <div className={`card-data${cardVisibility}`}>
+      <div
+        className={`${
+          cardVisibility ? "flex" : "invisible"
+        } flex-col p-2 items-center gap-2`}
+      >
         {data ? (
-          <>
-            <div className="data-fact">{data.fact}</div>
-            <div className="data-length">Length: {data.length}</div>
-          </>
+          <div className="text-neutral-600">
+            <div className="text-justify">{data.fact}</div>
+            <div className="text-center">Length: {data.length}</div>
+          </div>
         ) : (
           <div className="data-fact">Loading</div>
         )}
-        <input
-          className={`fact-button${theme}`}
-          type={"button"}
-          value={"Next Fact"}
+        <button
+          className="text-black bg-neutral-200 hover:bg-neutral-100 w-fit rounded-full px-2 py-1 hover:shadow-md shadow-stone-950"
           onClick={handleClick}
-        />
+        >
+          Next Fact
+        </button>
       </div>
     </div>
   );

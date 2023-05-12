@@ -1,3 +1,1 @@
-import { useCatFact } from "./useCatFact";
-
-export { useCatFact };
+export { useCatFact } from "./useCatFact";

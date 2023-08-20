@@ -4,8 +4,8 @@ import { FactPage, AboutPage } from "../pages";
 const PageRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<FactPage />} />
-      <Route path="/about" element={<AboutPage />} />
+      <Route path="/catfact/" element={<FactPage />} />
+      <Route path="/catfact/about" element={<AboutPage />} />
     </Routes>
   );
 };

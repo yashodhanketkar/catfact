@@ -8,10 +8,10 @@ export const NavBar = () => {
     <div className="inline-flex justify-end w-1/6 ">
       <ul className="inline-flex gap-2">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/catfact/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink to="/catfact/about">About</NavLink>
         </li>
       </ul>
     </div>

@@ -1,1 +1,1 @@
-export { useCatFact } from "./useCatFact";
+export { useTheme } from "./useTheme";

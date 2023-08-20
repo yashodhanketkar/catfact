@@ -1,17 +1,17 @@
-import { DisplayCatFact } from "./facts";
-import { Header } from "../components/header";
-import Footer from "../components/footer";
+import LayoutWrapper from "../components/interface";
+import { Outlet } from "react-router-dom";
+import PageRouter from "../routes";
+import { CatFactWrapper } from "../context/CatFact";
+import { Cookies } from "../components/interface/cookie";
 
-const Layout = () => {
+export const Layout = () => {
   return (
-    <div className="flex flex-col w-screen min-h-screen">
-      <Header />
-      <div className="flex justify-center mb-auto">
-        <DisplayCatFact />
-      </div>
-      <Footer />
-    </div>
+    <LayoutWrapper>
+      <CatFactWrapper>
+        <PageRouter />
+        <Outlet />
+        <Cookies />
+      </CatFactWrapper>
+    </LayoutWrapper>
   );
 };
-
-export default Layout;

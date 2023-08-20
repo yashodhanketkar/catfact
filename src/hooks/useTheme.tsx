@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useTheme = (): [handleTheme: () => void] => {
+export const useTheme = (): [handleTheme: () => void, darkTheme: boolean] => {
   const [darkTheme, setDarkTheme] = useState(false);
 
   useEffect(() => {
@@ -24,5 +24,5 @@ export const useTheme = (): [handleTheme: () => void] => {
     }
   };
 
-  return [handleTheme];
+  return [handleTheme, darkTheme];
 };

@@ -1,18 +1,7 @@
-import Layout from "./pages/layout";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { CookiesProvider } from "react-cookie";
+import { Layout } from "./pages";
 
 function App() {
-  const client = new QueryClient({});
-  return (
-    <div className="site">
-      <CookiesProvider>
-        <QueryClientProvider client={client}>
-          <Layout />
-        </QueryClientProvider>
-      </CookiesProvider>
-    </div>
-  );
+  return <Layout />;
 }
 
 export default App;

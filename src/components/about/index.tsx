@@ -19,7 +19,7 @@ const data: IData[] = [
     value: "2.0.1",
   },
   {
-    name: "github repo",
+    name: "github",
     value: "/yashodhanketkar/catfact",
   },
   {

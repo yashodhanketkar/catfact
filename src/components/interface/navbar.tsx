@@ -1,19 +1,20 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
-import { AiFillCaretDown } from "react-icons/ai";
 
 export const NavBar = () => {
   return (
-    <div className="inline-flex justify-end w-1/6 ">
-      <ul className="inline-flex gap-2">
-        <li>
-          <NavLink to="/catfact/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/catfact/about">About</NavLink>
-        </li>
+    <div className="inline-flex justify-end mx-2">
+      <ul className="inline-flex gap-4">
+        <NavLinkWrapper to="/catfact/" title="Home" />
+        <NavLinkWrapper to="/catfact/about" title="About" />
       </ul>
     </div>
+  );
+};
+
+const NavLinkWrapper = ({ to, title }: { to: string; title: string }) => {
+  return (
+    <li className="hover:text-white hover:underline font-semibold">
+      <NavLink to={to}>{title}</NavLink>
+    </li>
   );
 };

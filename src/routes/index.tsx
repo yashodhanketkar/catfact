@@ -1,5 +1,8 @@
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import { FactPage, AboutPage } from "../pages";
+
+const AboutPage = lazy(() => import("../pages/about"));
+const FactPage = lazy(() => import("../pages/fact"));
 
 const PageRouter = () => {
   return (

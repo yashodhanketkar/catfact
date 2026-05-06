@@ -1,25 +1,71 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap') layer(base);
+@import 'tailwindcss';
 
-* {
-  @apply m-0 p-0 box-border relative;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-comfortaa: Comfortaa;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-radius: var(--radius);
 }
 
-body {
-  @apply bg-neutral-300 dark:bg-neutral-700 transition-colors duration-1000 ease-in-out;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+:root {
+  --background: oklch(0.98 0.005 240);
+  --foreground: oklch(0.25 0.01 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.01 240);
+  --primary: oklch(0.25 0.01 240);
+  --primary-foreground: oklch(0.98 0.005 240);
+  --secondary: oklch(0.94 0.01 240);
+  --secondary-foreground: oklch(0.25 0.01 240);
+  --border: oklch(0.9 0.01 240);
+  --input: oklch(0.9 0.01 240);
+  --ring: oklch(0.6 0.02 240);
+  --radius: 0.625rem;
 }
 
-.backdrop {
-  @apply fixed top-0 left-0 z-0 flex items-center justify-center w-screen h-screen;
+.dark {
+  --background: oklch(0.18 0.012 240);
+  --foreground: oklch(0.92 0.005 240);
+  --card: oklch(0.87 0.008 240);
+  --card-foreground: oklch(0.21 0.01 240);
+  --primary: oklch(0.92 0.005 240);
+  --primary-foreground: oklch(0.18 0.012 240);
+  --secondary: oklch(0.28 0.015 240);
+  --secondary-foreground: oklch(0.95 0.005 240);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.45 0.02 240);
 }
 
-.custom-card {
-  @apply z-10 max-w-full m-2 text-black bg-white rounded-lg md:rounded-2xl min-w-fit;
-  @apply dark:text-white dark:bg-black dark:dark:shadow dark:shadow-black dark:hover:shadow-amber-500;
-}
-.custom-button {
-  @apply z-50 px-4 py-2 m-2 text-white transition-all duration-300 ease-in-out rounded-md bg-neutral-800 shadow-transparent hover:bg-neutral-700 hover:shadow hover:shadow-black;
-  @apply dark:hover:text-amber-400 dark:hover:shadow-amber-500 dark:shadow;
+@layer base {
+  * {
+    @apply border-border outline-ring/50 transition-colors duration-300 ease-in-out;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+  }
 }

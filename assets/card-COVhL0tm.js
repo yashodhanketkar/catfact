@@ -1,0 +1,1 @@
+import{t as e}from"./index-DrfnYD7P.js";var t=e();function n({children:e}){return(0,t.jsx)(`div`,{className:`bg-card text-card-foreground rounded-xl shadow shadow-card-foreground/20 mt-[25vh]`,children:e})}export{n as default};

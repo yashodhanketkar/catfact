@@ -1,7 +1,11 @@
-import { Footer } from "./footer";
-import { Header } from "./header";
+import { Footer } from "./ui/footer";
+import { Header } from "./ui/header/header";
 
-const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
+export default function LayoutWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex flex-col justify-between min-h-screen">
       <Header />
@@ -9,6 +13,4 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
       <Footer />
     </div>
   );
-};
-
-export default LayoutWrapper;
+}

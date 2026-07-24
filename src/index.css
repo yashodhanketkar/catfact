@@ -28,32 +28,33 @@
   color utility to any element that depends on these defaults.
 */
 :root {
-  --background: oklch(0.98 0.005 240);
-  --foreground: oklch(0.25 0.01 240);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.01 240);
-  --primary: oklch(0.25 0.01 240);
-  --primary-foreground: oklch(0.98 0.005 240);
-  --secondary: oklch(0.94 0.01 240);
-  --secondary-foreground: oklch(0.25 0.01 240);
-  --border: oklch(0.9 0.01 240);
-  --input: oklch(0.9 0.01 240);
-  --ring: oklch(0.6 0.02 240);
+  --background: oklch(0.85 0.015 70);
+  --foreground: oklch(0.15 0.015 70);
+  --card: oklch(0.85 0.015 70);
+  --card-foreground: oklch(0.25 0.015 70);
+  --primary: oklch(0.8 0.015 70);
+  --primary-foreground: oklch(0.2 0.015 70);
+  --secondary: oklch(0.2 0.015 70);
+  --secondary-foreground: oklch(0.8 0.015 70);
+  --border: oklch(0.1 0.015 70);
+  --input: oklch(0.1 0.01 70);
+  --ring: oklch(0.4 0.02 70);
   --radius: 0.625rem;
 }
 
 .dark {
-  --background: oklch(0.18 0.012 240);
-  --foreground: oklch(0.92 0.005 240);
-  --card: oklch(0.87 0.008 240);
-  --card-foreground: oklch(0.21 0.01 240);
-  --primary: oklch(0.92 0.005 240);
-  --primary-foreground: oklch(0.18 0.012 240);
-  --secondary: oklch(0.28 0.015 240);
-  --secondary-foreground: oklch(0.95 0.005 240);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 18%);
-  --ring: oklch(0.45 0.02 240);
+  --background: oklch(0.15 0.03 70);
+  --foreground: oklch(0.85 0.03 70);
+  --card: oklch(0.25 0.03 70);
+  --card-foreground: oklch(0.85 0.03 70);
+  --primary: oklch(0.2 0.03 70);
+  --primary-foreground: oklch(0.8 0.03 70);
+  --secondary: oklch(0.8 0.03 70);
+  --secondary-foreground: oklch(0.2 0.03 70);
+  --border: oklch(0.9 0.03 70);
+  --input: oklch(0.9 0.01 70);
+  --ring: oklch(0.6 0.02 70);
+  --radius: 0.625rem;
 }
 
 @layer base {

@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
-import LayoutWrapper from "./components/interface";
-import { Cookies } from "./components/interface/cookie";
-import PageRouter from "./routes";
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 import { useCatFactStore } from "./store/catFact";
 import { useThemeStore } from "./store/theme";
+
+const LayoutWrapper = lazy(() => import("./components/layout"));
+const PageRouter = lazy(() => import("./routes"));
+const Cookies = lazy(() => import("./components/cookie"));
 
 function App() {
   const { fetchData } = useCatFactStore();

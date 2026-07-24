@@ -1,8 +1,10 @@
-import { CardWrapper } from "@/components/card";
 import { useCatFactStore } from "@/store/catFact";
 import { catFactFetcher } from "@/api/catfact";
+import { lazy } from "react";
 
-const FactPage = () => {
+const CardWrapper = lazy(() => import("@/components/card"));
+
+export default function FactPage() {
   const { catfact, setFact } = useCatFactStore();
 
   const handleFetch = async () => {
@@ -22,8 +24,7 @@ const FactPage = () => {
           <p className="text-center">({catfact.length})</p>
         </div>
         <button
-          className="p-2 rounded w-fit cursor-pointer 
-          bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground"
+          className="p-2 rounded w-fit cursor-pointer bg-secondary text-secondary-foreground hover:opacity-80"
           onClick={handleFetch}
         >
           Refetch
@@ -31,6 +32,4 @@ const FactPage = () => {
       </div>
     </CardWrapper>
   );
-};
-
-export default FactPage;
+}

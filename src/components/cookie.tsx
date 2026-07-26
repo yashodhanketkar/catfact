@@ -17,12 +17,15 @@ export default function Cookies() {
   if (accepted) return null;
 
   return (
-    <div className="fixed z-50 flex flex-col items-end gap-2 p-4 font-semibold text-card-foreground bg-card rounded-md right-2 bottom-12">
+    <div
+      className="
+      dialog-cookie
+      flex flex-col items-end gap-2 p-2 ring-1 ring-card-foreground/10
+      text-black bg-white rounded-md font-semibold text-sm
+      "
+    >
       <p>This page uses cookies</p>
-      <button
-        onClick={acceptCookie}
-        className="px-2 py-1 text-white bg-blue-600 rounded-md w-fit"
-      >
+      <button onClick={acceptCookie} className="px-2 py-1 text-white bg-blue-600 rounded-md w-fit cursor-pointer">
         Accept
       </button>
     </div>

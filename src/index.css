@@ -63,10 +63,18 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply flex flex-col justify-between min-h-screen bg-background text-foreground;
   }
 
   html {
     @apply font-sans;
+  }
+
+  .dialog-cookie {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    z-index: 999;
   }
 }
